@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using UnityEngine;
 
-public class TakeSpiderman : MonoBehaviour
+public class ClawController : MonoBehaviour
 {
     public Transform[] claw;
     private bool startAnimation;

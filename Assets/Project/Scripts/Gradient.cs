@@ -6,20 +6,17 @@ using UnityEngine;
 public class Gradient : MonoBehaviour
 {
     [SerializeField] public List<Transform> joints;
-    public Transform endEffector;
+    private List<Vector3> distances;
 
     public Transform target;
 
     private float costFunction;
 
-    private List<Vector3> distances;
+    private Vector6 theta;
+    public float tolerance = 1f;
 
     public float alpha;
     public float initAlpha;
-
-    private Vector6 theta; 
-
-    public float tolerance = 1f;
 
     private Vector6 gradient;
 
@@ -29,7 +26,6 @@ public class Gradient : MonoBehaviour
     public float resetDuration = 1f;
 
     public ArmController armController;
-    public bool firtsArm;
 
     void Start()
     {
@@ -42,7 +38,7 @@ public class Gradient : MonoBehaviour
 
         theta = Vector6.zero;
 
-        costFunction = Vector3.Distance(endEffector.position, target.position) * Vector3.Distance(endEffector.position, target.position);
+        costFunction = Vector3.Distance(joints[joints.Count - 1].position, target.position) * Vector3.Distance(joints[joints.Count - 1].position, target.position);
 
         initPosition = new Vector3[6];
 

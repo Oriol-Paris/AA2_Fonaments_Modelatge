@@ -2,13 +2,13 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DrOctopusController : MonoBehaviour
+public class DocOck : MonoBehaviour
 {
     [SerializeField] public float speed = 5f; // Speed of movement
     [SerializeField] public float rotationSpeed = 100f; // Speed of rotation
     [SerializeField] public float jumpForce = 1f;        // The force applied for the jump
     [SerializeField] private float jumpCooldown = 1f;
-    [SerializeField] private TakeSpiderman[] takeSpiderman;
+    [SerializeField] private ClawController[] takeSpiderman;
     [SerializeField] private float mouseSensitivity = 100f; // Rotation sensitivity
     private bool canJump = true;
 

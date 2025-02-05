@@ -18,6 +18,10 @@ WASD ->  Movimiento
 Q -> Agarrar a Spiderman
 Esc -> Cerrar el programa
 
-### Spiderman Movewment
+### Claw Controller
+
+En cuanto se llama a la función StartAnim() desde el script anterior, se empieza a ejecutar una animación que cierra la garra del brazo de Doc Ock y setea a Spiderman como hijo de Doc Ock, agarrándolo.
+
+### Spiderman Movement
 
 Dado un recorrido en el mapa, este script se dedica a que Spiderman lo recorra.

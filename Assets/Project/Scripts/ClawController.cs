@@ -30,7 +30,7 @@ public class ClawController : MonoBehaviour
                     armController.currentState = ArmController.state.GRABBED;
                     target.GetComponent<SpidermanMovement>().canMove = false;
                 }
-                StartCoroutine(StopAnimation());
+                StartCoroutine(FinishAnim());
                 return;
             }
 
@@ -55,13 +55,13 @@ public class ClawController : MonoBehaviour
         }
     }
 
-    IEnumerator StopAnimation()
+    IEnumerator FinishAnim()
     {
         yield return new WaitForSeconds(0.5f);
         startAnimation = false;
     }
 
-    public void SetStartAnimation()
+    public void StartAnim()
     {
         startAnimation = true;
         animationDoing = true;

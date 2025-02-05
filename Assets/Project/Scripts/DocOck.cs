@@ -42,7 +42,7 @@ public class DocOck : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            takeSpiderman[0].SetStartAnimation();
+            takeSpiderman[0].StartAnim();
         }
         if( Input.GetKeyDown(KeyCode.Escape))
         {

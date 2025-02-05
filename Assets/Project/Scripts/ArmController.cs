@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArmController : MonoBehaviour
 {
-    public enum state { OUTDISTANCE, MOVEARM, GRABBED}
+    public enum state { TOO_FAR, CAN_MOVE, GRABBED}
     public state currentState;
 
     public Transform target;
@@ -17,14 +17,12 @@ public class ArmController : MonoBehaviour
     {
         switch(currentState)
         {
-            case state.OUTDISTANCE:
-                SetGradientMovement(false);
-                break;
-            case state.MOVEARM:
-                SetGradientMovement(true);
-                break;
             case state.GRABBED:
+            case state.TOO_FAR:
                 SetGradientMovement(false);
+                break;
+            case state.CAN_MOVE:
+                SetGradientMovement(true);
                 break;
         }
 
@@ -35,12 +33,12 @@ public class ArmController : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, target.position) < distance && IsTargetInVisionAngle())
         {
-            if(currentState == state.OUTDISTANCE) 
-                currentState = state.MOVEARM;
+            if(currentState == state.TOO_FAR) 
+                currentState = state.CAN_MOVE;
         }
         else
         {
-            currentState = state.OUTDISTANCE;
+            currentState = state.TOO_FAR;
         }
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PathFinding : MonoBehaviour
+public class SpidermanMovement : MonoBehaviour
 {
     private List<Transform> nodeList;
     public GameObject pathfindingNodes;

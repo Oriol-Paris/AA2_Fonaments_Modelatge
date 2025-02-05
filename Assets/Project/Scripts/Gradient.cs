@@ -6,6 +6,7 @@ using UnityEngine;
 public class Gradient : MonoBehaviour
 {
     [SerializeField] public List<Transform> joints;
+
     private List<Vector3> distances;
 
     public Transform target;

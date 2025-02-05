@@ -28,7 +28,7 @@ public class ClawController : MonoBehaviour
                 {
                     target.SetParent(this.transform);
                     armController.currentState = ArmController.state.GRABBED;
-                    target.GetComponent<PathFinding>().canMove = false;
+                    target.GetComponent<SpidermanMovement>().canMove = false;
                 }
                 StartCoroutine(StopAnimation());
                 return;
@@ -38,8 +38,6 @@ public class ClawController : MonoBehaviour
             {
                 claw[i].Rotate(0, 0, -0.5f);
             }
-
-
         }
 
         if(!startAnimation) 
